@@ -1,1 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hi Tech Roofing Services Co. — Fresno CA. Residential and commercial roofing, repairs, flat roofing, tile, and insulation. Free estimates. (559) 270-0917.">
+<title>Hi Tech Roofing Services Co. | Fresno, CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1c3252;--navy2:#243d62;--sky:#3a6b9e;--sky-lt:#5e8ec0;--fog:#e8eef6;
+  --terra:#c8601f;--terra2:#e07535;--amber:#f5a623;--sand:#f7f1e8;--sand2:#ede5d8;
+  --cream:#fdfaf5;--stone:#d9d0c3;--bark:#7a6a58;--bark2:#9e8f7d;
+  --text:#1a2634;--text2:#4a5868;--text3:#8a9aaa;--white:#fff;
+  --r:8px;--r2:14px;--r3:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Nunito Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
 
+/* TOP BAR */
+.topbar{background:var(--navy);padding:9px 60px;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:rgba(255,255,255,.62);letter-spacing:.3px}
+.topbar strong{color:rgba(255,255,255,.85)}
+.topbar-right{display:flex;gap:28px;align-items:center}
+.topbar-right a{color:rgba(255,255,255,.62);transition:color .2s}
+.topbar-right a:hover{color:var(--terra2)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:var(--cream);border-bottom:1px solid var(--stone);padding:0 60px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.shadow{box-shadow:0 4px 24px rgba(26,38,52,.1)}
+.nav-logo-wrap{display:flex;align-items:center;gap:13px}
+.nav-shield{width:42px;height:42px;flex-shrink:0;background:var(--terra);clip-path:polygon(50% 0%,100% 20%,100% 75%,50% 100%,0% 75%,0% 20%);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:#fff;font-weight:700}
+.nav-co-name{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);letter-spacing:-.2px;line-height:1.15}
+.nav-co-sub{font-size:11px;font-weight:600;color:var(--bark2);letter-spacing:.5px;text-transform:uppercase}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:600;color:var(--text2);transition:color .2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;background:var(--terra);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-right{display:flex;gap:10px;align-items:center}
+.btn-n-ghost{padding:8px 18px;border-radius:100px;border:1.5px solid var(--stone);font-size:13px;font-weight:700;color:var(--text2);transition:all .2s}
+.btn-n-ghost:hover{border-color:var(--navy);color:var(--navy)}
+.btn-n-solid{padding:9px 22px;border-radius:100px;background:var(--terra);color:#fff;font-size:13px;font-weight:800;box-shadow:0 4px 14px rgba(200,96,31,.28);transition:all .2s}
+.btn-n-solid:hover{background:var(--terra2);transform:translateY(-1px)}
+
+/* HERO */
+.hero{min-height:calc(100vh - 107px);display:grid;grid-template-columns:55% 45%;background:var(--navy);position:relative;overflow:hidden}
+.hero-left{padding:80px 64px 80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero-left::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:48px 48px;z-index:-1}
+.hero-rating-strip{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:100px;padding:7px 18px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:28px;width:fit-content}
+.hero-stars{color:var(--amber);letter-spacing:.5px}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(42px,5.2vw,74px);font-weight:800;line-height:1.0;color:#fff;letter-spacing:-.5px;margin-bottom:22px}
+.hero-h1 .line2{color:var(--terra2);font-style:italic}
+.hero-p{font-size:16.5px;color:rgba(255,255,255,.7);line-height:1.75;max-width:460px;margin-bottom:36px;font-weight:400}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.btn-hero-main{display:inline-flex;align-items:center;gap:9px;background:var(--terra);color:#fff;font-size:15px;font-weight:800;padding:15px 30px;border-radius:100px;box-shadow:0 8px 28px rgba(200,96,31,.4);transition:all .22s}
+.btn-hero-main:hover{background:var(--terra2);transform:translateY(-2px)}
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);font-size:15px;font-weight:700;padding:14px 28px;border-radius:100px;border:1.5px solid rgba(255,255,255,.18);transition:all .22s}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.35)}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px}
+.hb{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:6px;padding:8px 14px;font-size:12.5px;font-weight:600;color:rgba(255,255,255,.65)}
+.hb-check{color:var(--amber);font-size:13px}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.65) contrast(1.1)}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--navy) 0%,rgba(28,50,82,.3) 40%,transparent 100%)}
+.hero-stats{grid-column:1/-1;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.08);display:grid;grid-template-columns:repeat(4,1fr)}
+.hs{padding:22px 40px;border-right:1px solid rgba(255,255,255,.07)}
+.hs:last-child{border-right:none}
+.hs-n{font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:#fff;line-height:1;margin-bottom:3px}
+.hs-n span{color:var(--terra2)}
+.hs-l{font-size:11.5px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:rgba(255,255,255,.45)}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:2fr 3fr;min-height:540px;background:var(--sand)}
+.about-img{position:relative;overflow:hidden;min-height:420px}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about-img-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(28,50,82,.7) 0%,transparent 60%);padding:28px 24px}
+.about-img-badge{display:inline-flex;flex-direction:column;background:var(--terra);border-radius:var(--r);padding:12px 18px;color:#fff}
+.about-img-badge strong{font-size:22px;font-family:'Playfair Display',serif;line-height:1}
+.about-img-badge span{font-size:11px;font-weight:700;letter-spacing:.5px;opacity:.85}
+.about-copy{padding:72px 64px 72px 56px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--terra);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:24px;height:2px;background:var(--terra);border-radius:2px}
+.sec-h2{font-family:'Playfair Display',serif;font-size:clamp(28px,3.5vw,48px);font-weight:800;line-height:1.06;letter-spacing:-.3px;color:var(--navy);margin-bottom:18px}
+.sec-h2 em{font-style:italic;color:var(--terra)}
+.about-copy p{font-size:15.5px;color:var(--text2);line-height:1.78;margin-bottom:16px;max-width:520px}
+.about-copy p strong{color:var(--text)}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.about-tag{display:inline-flex;align-items:center;gap:6px;background:var(--fog);border:1px solid rgba(58,107,158,.2);border-radius:100px;padding:5px 14px;font-size:12.5px;font-weight:600;color:var(--navy)}
+.about-tag-dot{width:5px;height:5px;border-radius:50%;background:var(--sky)}
+
+/* SERVICES */
+#services{padding:90px 60px;background:var(--cream)}
+.svc-header{margin-bottom:56px;max-width:640px}
+.svc-header p{font-size:15.5px;color:var(--text2);line-height:1.75;margin-top:14px}
+.svc-layout{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.svc-card{background:#fff;border:1px solid var(--stone);border-radius:var(--r2);padding:32px 28px;position:relative;overflow:hidden;transition:box-shadow .3s,transform .3s;cursor:default}
+.svc-card.featured{background:var(--navy);grid-row:span 2;display:flex;flex-direction:column}
+.svc-card.featured .svc-card-name{color:#fff}
+.svc-card.featured .svc-card-desc{color:rgba(255,255,255,.62)}
+.svc-card.featured .svc-icon-box{background:rgba(255,255,255,.1)}
+.svc-card.featured .svc-arrow{color:var(--terra2)}
+.svc-card.featured::before{content:'';position:absolute;right:-40px;bottom:-40px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04)}
+.svc-card:not(.featured):hover{box-shadow:0 12px 36px rgba(28,50,82,.09);transform:translateY(-4px)}
+.svc-icon-box{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:18px;flex-shrink:0}
+.svc-card-name{font-family:'Playfair Display',serif;font-size:18.5px;font-weight:700;color:var(--navy);margin-bottom:9px;line-height:1.2}
+.svc-card-desc{font-size:13.5px;color:var(--text2);line-height:1.72}
+.svc-arrow{color:var(--terra);font-size:20px;margin-top:auto;padding-top:20px}
+.svc-divider{width:36px;height:2px;background:rgba(255,255,255,.15);margin:22px 0}
+.svc-card.featured .svc-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:14px}
+.svc-card.featured .svc-list li{font-size:13.5px;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px}
+.svc-card.featured .svc-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--terra2);flex-shrink:0}
+
+/* PROCESS */
+#process{background:var(--navy);padding:88px 60px}
+.process-header{margin-bottom:60px}
+.process-header .eyebrow::before{background:rgba(255,255,255,.3)}
+.process-header .eyebrow{color:rgba(255,255,255,.55)}
+.process-header .sec-h2{color:#fff}
+.process-header p{font-size:15.5px;color:rgba(255,255,255,.55);max-width:500px;line-height:1.75;margin-top:12px}
+.process-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:28px;right:28px;height:2px;background:rgba(255,255,255,.1);z-index:0}
+.ps{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;padding:0 24px 0 0}
+.ps-num-wrap{display:flex;align-items:center;margin-bottom:20px}
+.ps-num{width:56px;height:56px;border-radius:50%;flex-shrink:0;background:var(--navy);border:2px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:#fff;transition:all .3s}
+.ps:hover .ps-num{background:var(--terra);border-color:var(--terra)}
+.ps-title{font-size:14.5px;font-weight:800;color:rgba(255,255,255,.85);margin-bottom:7px;line-height:1.3}
+.ps-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7}
+
+/* GALLERY */
+#gallery{padding:0;background:var(--text)}
+.gallery-header{padding:72px 60px 48px;display:flex;align-items:flex-end;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.gallery-header .eyebrow::before{background:rgba(255,255,255,.3)}
+.gallery-header .eyebrow{color:rgba(255,255,255,.45)}
+.gallery-header .sec-h2{color:#fff;margin-bottom:0}
+.gallery-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr;grid-template-rows:290px 200px;gap:3px}
+.gi{position:relative;overflow:hidden;background:#2a3540}
+.gi.tall{grid-row:span 2}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;filter:saturate(.75) brightness(.85)}
+.gi:hover img{transform:scale(1.06);filter:saturate(.9) brightness(.95)}
+.gi-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(28,50,82,.9) 0%,transparent 60%);padding:24px 20px 16px;opacity:0;transition:opacity .3s}
+.gi:hover .gi-label{opacity:1}
+.gi-tag{display:inline-block;background:var(--terra);color:#fff;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:4px}
+.gallery-footer{padding:32px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.gallery-footer p{font-size:14px;color:rgba(255,255,255,.4)}
+.btn-gallery{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:100px;border:1.5px solid rgba(255,255,255,.18);font-size:13px;font-weight:700;color:rgba(255,255,255,.7);transition:all .2s}
+.btn-gallery:hover{border-color:var(--terra2);color:var(--terra2)}
+
+/* REVIEWS */
+#reviews{padding:92px 60px;background:var(--sand)}
+.reviews-split{display:grid;grid-template-columns:280px 1fr;gap:60px;margin-bottom:52px}
+.rsb-big{font-family:'Playfair Display',serif;font-size:86px;font-weight:700;color:var(--navy);line-height:1;margin-bottom:6px}
+.rsb-stars{color:var(--amber);font-size:22px;letter-spacing:2px;margin-bottom:8px}
+.rsb-count{font-size:13.5px;font-weight:600;color:var(--bark)}
+.rsb-divider{width:40px;height:3px;background:var(--terra);border-radius:2px;margin:20px 0}
+.rsb-note{font-size:13px;color:var(--bark2);line-height:1.6;max-width:220px}
+.reviews-right-head .sec-h2{margin-bottom:12px}
+.reviews-right-head p{font-size:15px;color:var(--text2);line-height:1.72;max-width:540px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rev-card{background:var(--cream);border:1px solid var(--stone);border-radius:var(--r2);padding:28px 26px;position:relative;transition:box-shadow .3s}
+.rev-card:hover{box-shadow:0 10px 32px rgba(28,50,82,.08)}
+.rev-card::before{content:'\201C';position:absolute;top:12px;right:20px;font-family:'Playfair Display',serif;font-size:64px;color:var(--sand2);line-height:1}
+.rev-stars{color:var(--amber);font-size:13px;letter-spacing:.8px;margin-bottom:12px}
+.rev-text{font-size:14px;color:var(--text2);line-height:1.78;font-style:italic;margin-bottom:20px}
+.rev-name{font-size:13px;font-weight:800;color:var(--navy)}
+.rev-meta{font-size:11.5px;color:var(--text3);margin-top:2px}
+.rev-verified{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--sky);margin-top:10px}
+.rev-verified::before{content:'✓';font-size:10px}
+
+/* WHY US */
+#whyus{background:var(--cream)}
+.whyus-grid{display:grid;grid-template-columns:3fr 2fr;min-height:580px}
+.whyus-left{padding:88px 64px 88px 60px;border-right:1px solid var(--stone)}
+.whyus-list{display:flex;flex-direction:column;margin-top:44px}
+.wi{display:grid;grid-template-columns:44px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--stone);align-items:start}
+.wi:first-child{padding-top:0}
+.wi:last-child{border-bottom:none;padding-bottom:0}
+.wi-num{width:44px;height:44px;border-radius:50%;background:var(--sand2);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:17px;color:var(--terra);font-weight:700}
+.wi-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.wi-desc{font-size:13.5px;color:var(--text2);line-height:1.75}
+.whyus-right{background:var(--navy);padding:72px 52px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.whyus-right::before{content:'';position:absolute;right:-80px;bottom:-80px;width:280px;height:280px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
+.whyus-right::after{content:'';position:absolute;left:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:rgba(200,96,31,.08);pointer-events:none}
+.wyr-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:8px}
+.wyr-title em{color:var(--terra2);font-style:italic}
+.wyr-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:36px;line-height:1.65}
+.wyr-contact{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.wyr-row{display:flex;gap:14px;align-items:flex-start}
+.wyr-icon{width:38px;height:38px;flex-shrink:0;background:rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.wyr-info strong{display:block;color:#fff;font-size:14px;margin-bottom:1px}
+.wyr-info span{color:rgba(255,255,255,.45);font-size:12.5px}
+.wyr-info a{color:rgba(224,117,53,.8)}
+.btn-wyr{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--terra);color:#fff;font-size:15px;font-weight:800;padding:14px 22px;border-radius:100px;box-shadow:0 6px 22px rgba(200,96,31,.38);transition:all .22s}
+.btn-wyr:hover{background:var(--terra2);transform:translateY(-2px)}
+.wyr-spanish{margin-top:12px;text-align:center;font-size:12.5px;color:rgba(255,255,255,.38)}
+
+/* AREAS */
+#areas{padding:80px 60px;background:var(--fog)}
+.areas-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:start}
+.areas-left .sec-h2{margin-bottom:14px}
+.areas-left p{font-size:14.5px;color:var(--text2);line-height:1.75;margin-bottom:24px}
+.btn-primary-sm{display:inline-flex;align-items:center;gap:7px;background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;padding:11px 22px;border-radius:100px;transition:all .2s}
+.btn-primary-sm:hover{background:var(--sky)}
+.areas-map{background:var(--cream);border:1px solid var(--stone);border-radius:var(--r2);padding:32px 28px}
+.areas-map-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:18px}
+.areas-chips{display:flex;flex-wrap:wrap;gap:8px}
+.area-chip{background:var(--fog);border:1px solid rgba(58,107,158,.18);border-radius:100px;padding:6px 16px;font-size:13px;font-weight:600;color:var(--navy);transition:all .2s;cursor:default}
+.area-chip:hover{background:var(--navy);color:#fff}
+.area-chip.primary{background:var(--navy);color:#fff}
+
+/* FAQ */
+#faq{padding:88px 60px;background:var(--cream)}
+.faq-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.faq-left .sec-h2{margin-bottom:14px}
+.faq-left p{font-size:14.5px;color:var(--text2);line-height:1.75}
+.faq-left-note{margin-top:32px;background:var(--sand);border-left:3px solid var(--terra);padding:16px 20px;border-radius:0 var(--r) var(--r) 0;font-size:13.5px;color:var(--text2);line-height:1.7}
+.faq-left-note strong{color:var(--terra)}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--stone);overflow:hidden}
+.faq-item:first-child{border-top:1px solid var(--stone)}
+.faq-q{width:100%;text-align:left;background:none;border:none;cursor:pointer;padding:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14.5px;font-weight:700;color:var(--navy);font-family:'Nunito Sans',sans-serif;transition:color .2s}
+.faq-q:hover{color:var(--terra)}
+.faq-icon{width:28px;height:28px;flex-shrink:0;border:1.5px solid var(--stone);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:300;color:var(--bark);transition:all .25s;line-height:1}
+.faq-item.open .faq-icon{background:var(--terra);border-color:var(--terra);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-a-inner{padding:0 0 18px;font-size:13.5px;color:var(--text2);line-height:1.78}
+.faq-item.open .faq-a{max-height:240px}
+
+/* GUARANTEE */
+#guarantee{background:var(--sand2);padding:0;display:grid;grid-template-columns:1fr 1fr;min-height:340px}
+.guar-panel{padding:64px 52px;border-right:1px solid var(--stone);display:flex;flex-direction:column;justify-content:center}
+.guar-panel:last-child{border-right:none}
+.guar-icon{font-size:40px;margin-bottom:18px}
+.guar-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.2}
+.guar-body{font-size:14px;color:var(--text2);line-height:1.78;max-width:380px}
+.guar-body strong{color:var(--text)}
+
+/* CTA */
+.cta-banner{background:var(--terra);padding:80px 60px;display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-banner::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.035) 0,rgba(255,255,255,.035) 1px,transparent 1px,transparent 34px)}
+.cta-left{position:relative;z-index:1}
+.cta-left h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,50px);color:#fff;line-height:1.04;letter-spacing:-.3px;margin-bottom:8px}
+.cta-left p{font-size:15px;color:rgba(255,255,255,.75)}
+.btn-cta-white{position:relative;z-index:1;display:inline-flex;align-items:center;gap:9px;background:#fff;color:var(--terra);font-size:16px;font-weight:900;padding:18px 36px;border-radius:100px;box-shadow:0 8px 30px rgba(0,0,0,.15);white-space:nowrap;transition:all .22s}
+.btn-cta-white:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.2)}
+
+/* FOOTER */
+footer{background:var(--navy)}
+.footer-main{padding:60px 60px 40px;display:grid;grid-template-columns:1.8fr 1fr 1fr 1.4fr;gap:48px;border-bottom:1px solid rgba(255,255,255,.07)}
+.footer-shield{width:44px;height:44px;background:var(--terra);clip-path:polygon(50% 0%,100% 20%,100% 75%,50% 100%,0% 75%,0% 20%);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:#fff;font-weight:700;margin-bottom:14px}
+.footer-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff;margin-bottom:4px}
+.footer-tagline{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:18px;letter-spacing:.5px}
+.footer-about{font-size:13px;color:rgba(255,255,255,.45);line-height:1.72;margin-bottom:18px;max-width:300px}
+.footer-contact-row{display:flex;align-items:center;gap:8px;font-size:12.5px;color:rgba(255,255,255,.5);margin-bottom:8px}
+.footer-contact-row a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-contact-row a:hover{color:var(--terra2)}
+.footer-col-title{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px}
+.footer-col-links{display:flex;flex-direction:column;gap:10px}
+.footer-col-links a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-col-links a:hover{color:rgba(255,255,255,.85)}
+.footer-cta-col p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:18px}
+.btn-footer{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--terra);color:#fff;border-radius:100px;font-size:13.5px;font-weight:800;padding:11px 18px;box-shadow:0 4px 14px rgba(200,96,31,.3);transition:all .2s;margin-bottom:10px}
+.btn-footer:hover{background:var(--terra2)}
+.footer-bottom{padding:20px 60px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.footer-lic{font-size:12px;color:rgba(255,255,255,.2)}
+
+/* SCROLL REVEAL */
+.fade-up{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s ease}
+.fade-up.in{opacity:1;transform:none}
+.fade-up.d1{transition-delay:.1s}
+.fade-up.d2{transition-delay:.2s}
+.fade-up.d3{transition-delay:.3s}
+
+/* HERO ENTRANCE */
+.hero-left>*{opacity:0;animation:heroIn .8s ease forwards}
+.hero-rating-strip{animation-delay:.1s}
+.hero-h1{animation-delay:.25s}
+.hero-p{animation-delay:.4s}
+.hero-actions{animation-delay:.55s}
+.hero-badges{animation-delay:.7s}
+.hero-stats{opacity:0;animation:heroIn .6s ease forwards .85s}
+@keyframes heroIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .topbar{display:none}
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .hero-left{padding:60px 24px 40px}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .hs:nth-child(2){border-right:none}
+  .hs:nth-child(3){border-top:1px solid rgba(255,255,255,.07)}
+  .about-wrap{grid-template-columns:1fr}
+  .about-img{min-height:280px}
+  .about-copy{padding:48px 24px}
+  #services,#process,#gallery,#reviews,#whyus,#areas,#faq{padding-left:24px;padding-right:24px}
+  .gallery-header,.gallery-footer,.footer-bottom{padding-left:24px;padding-right:24px}
+  .svc-layout{grid-template-columns:1fr 1fr}
+  .svc-card.featured{grid-row:span 1}
+  .process-steps{grid-template-columns:1fr 1fr;gap:28px}
+  .process-steps::before{display:none}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gi.tall{grid-row:span 1}
+  .reviews-split{grid-template-columns:1fr;gap:28px}
+  .reviews-grid{grid-template-columns:1fr}
+  .whyus-grid{grid-template-columns:1fr}
+  .whyus-left{padding:52px 24px;border-right:none;border-bottom:1px solid var(--stone)}
+  .whyus-right{padding:52px 24px}
+  .areas-wrap{grid-template-columns:1fr;gap:32px}
+  .faq-layout{grid-template-columns:1fr;gap:40px}
+  #guarantee{grid-template-columns:1fr}
+  .guar-panel{border-right:none;border-bottom:1px solid var(--stone);padding:44px 24px}
+  .cta-banner{flex-direction:column;align-items:flex-start;padding:48px 24px}
+  .footer-main{grid-template-columns:1fr 1fr;padding:44px 24px 28px;gap:32px}
+}
+@media(max-width:600px){
+  .svc-layout{grid-template-columns:1fr}
+  .gallery-grid{grid-template-columns:1fr}
+  .hero-h1{font-size:40px}
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .footer-main{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div><strong>Hi Tech Roofing Services Co.</strong> &nbsp;&middot;&nbsp; 3164 N Marks Ave #126, Fresno, CA 93722 &nbsp;&middot;&nbsp; Marks Industrial Center</div>
+  <div class="topbar-right">
+    <span>Open Mon&ndash;Fri until 4 PM</span>
+    <a href="tel:5592700917"><strong>(559) 270-0917</strong></a>
+    <span>Hablamos Espa&ntilde;ol</span>
+  </div>
+</div>
+
+<nav id="nav">
+  <div class="nav-logo-wrap">
+    <div class="nav-shield">HTR</div>
+    <div>
+      <div class="nav-co-name">Hi Tech Roofing</div>
+      <div class="nav-co-sub">Fresno, California</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#process">Our Process</a>
+    <a href="#gallery">Projects</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#areas">Service Areas</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <a href="tel:5592700917" class="btn-n-ghost">&#9990; (559) 270-0917</a>
+    <a href="#whyus" class="btn-n-solid">Free Estimate</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-rating-strip">
+      <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      4.8 out of 5 &nbsp;&middot;&nbsp; 820+ Google Reviews
+    </div>
+    <h1 class="hero-h1">
+      We Fix Roofs<br>
+      <span class="line2">the Right Way.</span><br>
+      The First Time.
+    </h1>
+    <p class="hero-p">
+      We're a local Fresno roofing crew &mdash; not a big franchise, not a call center. When you call us, you get us. Residential homes, commercial buildings, flat roofs, tile, repairs, and everything in between. Serving the Central Valley since we opened our doors.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:5592700917" class="btn-hero-main">&#9990; &nbsp;(559) 270-0917</a>
+      <a href="#process" class="btn-hero-ghost">How We Work &rsaquo;</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hb"><span class="hb-check">&#10003;</span> Free Estimates</div>
+      <div class="hb"><span class="hb-check">&#10003;</span> Licensed &amp; Insured</div>
+      <div class="hb"><span class="hb-check">&#10003;</span> Residential &amp; Commercial</div>
+      <div class="hb"><span class="hb-check">&#10003;</span> Hablamos Espa&ntilde;ol</div>
+      <div class="hb"><span class="hb-check">&#10003;</span> No Hidden Fees</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=900&q=80" alt="Hi Tech Roofing crew at work in Fresno CA">
+  </div>
+  <div class="hero-stats">
+    <div class="hs"><div class="hs-n"><span>4.8</span>&#9733;</div><div class="hs-l">Google Rating</div></div>
+    <div class="hs"><div class="hs-n"><span>820</span>+</div><div class="hs-l">Verified Reviews</div></div>
+    <div class="hs"><div class="hs-n">100<span>%</span></div><div class="hs-l">Free Estimates</div></div>
+    <div class="hs"><div class="hs-n">EN <span>/</span> ES</div><div class="hs-l">Bilingual Service</div></div>
+  </div>
+</div>
+
+<div class="about-wrap" id="about">
+  <div class="about-img fade-up">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=75" alt="Roofing project in Fresno">
+    <div class="about-img-overlay">
+      <div class="about-img-badge"><strong>Fresno Local</strong><span>Central Valley Roofing</span></div>
+    </div>
+  </div>
+  <div class="about-copy">
+    <div class="eyebrow fade-up">About Us</div>
+    <h2 class="sec-h2 fade-up d1">We're a <em>local shop.</em><br>Not a national chain.</h2>
+    <p class="fade-up d2">When you call Hi Tech Roofing, you talk to the people actually doing the work. We're based right here in Fresno &mdash; 3164 N Marks Avenue &mdash; and we've been taking care of homes and businesses across the Central Valley since we started. <strong>Every estimate is free, every price is honest, and we don't walk away until the job is right.</strong></p>
+    <p class="fade-up d2">Roof leaks don't always cause ceiling damage you can see right away. We've found water sneaking in between roofing material and siding boards that homeowners didn't even know about. That's why a proper inspection matters. We check everything before we quote anything.</p>
+    <div class="about-tags fade-up d3">
+      <div class="about-tag"><span class="about-tag-dot"></span> Residential Roofing</div>
+      <div class="about-tag"><span class="about-tag-dot"></span> Commercial Projects</div>
+      <div class="about-tag"><span class="about-tag-dot"></span> New Construction</div>
+      <div class="about-tag"><span class="about-tag-dot"></span> Repair &amp; Maintenance</div>
+      <div class="about-tag"><span class="about-tag-dot"></span> Flat Roofing Systems</div>
+      <div class="about-tag"><span class="about-tag-dot"></span> Roof Tile &amp; Insulation</div>
+    </div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="svc-header fade-up">
+    <div class="eyebrow">What We Do</div>
+    <h2 class="sec-h2">Every type of roof.<br><em>One crew you can trust.</em></h2>
+    <p>We specialize in residential and commercial roofing across Fresno and the surrounding Central Valley. We don't subcontract the work &mdash; our crew handles it start to finish.</p>
+  </div>
+  <div class="svc-layout fade-up">
+    <div class="svc-card featured">
+      <div class="svc-icon-box">&#127968;</div>
+      <div class="svc-card-name">Residential &amp;<br>Commercial Roofing</div>
+      <div class="svc-divider"></div>
+      <div class="svc-card-desc">New roof installations from single-family homes to large commercial buildings. We've done churches, warehouses, apartment buildings, and everything in between.</div>
+      <ul class="svc-list">
+        <li>New roof installations</li>
+        <li>Full tear-off and replacement</li>
+        <li>Plywood &amp; decking repair</li>
+        <li>Fascia board replacement</li>
+        <li>Proper flashing and sealing</li>
+      </ul>
+      <div class="svc-arrow">&rarr;</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-box">&#128295;</div>
+      <div class="svc-card-name">Leak Repair &amp; Maintenance</div>
+      <div class="svc-card-desc">Leaks don't fix themselves. We find where water is actually getting in &mdash; not just where the stain is &mdash; and fix it correctly so it doesn't come back.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-box">&#11035;</div>
+      <div class="svc-card-name">Flat Roofing Systems</div>
+      <div class="svc-card-desc">TPO, modified bitumen, and built-up flat roof systems for commercial properties and residential structures with low-slope or flat roofs.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-box">&#128314;</div>
+      <div class="svc-card-name">Roof Tile</div>
+      <div class="svc-card-desc">Concrete and clay tile installation and repair. Matching replacement tiles sourced properly so your roof looks consistent for years.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon-box">&#127959;&#65039;</div>
+      <div class="svc-card-name">Insulation &amp; Ventilation</div>
+      <div class="svc-card-desc">Proper insulation and attic ventilation extends the life of any roof. We include a ventilation check on every re-roof we do.</div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="process-header fade-up">
+    <div class="eyebrow">How It Works</div>
+    <h2 class="sec-h2">What to expect<br>when you call us.</h2>
+    <p>We keep the process straightforward. No surprise invoices, no pushy upsells. Here's exactly what happens from your first call to the final inspection.</p>
+  </div>
+  <div class="process-steps">
+    <div class="ps fade-up d1">
+      <div class="ps-num-wrap"><div class="ps-num">1</div></div>
+      <div class="ps-title">You Call or Text</div>
+      <div class="ps-desc">Reach us at (559) 270-0917 any time during business hours. Tell us what's going on &mdash; we listen.</div>
+    </div>
+    <div class="ps fade-up d2">
+      <div class="ps-num-wrap"><div class="ps-num">2</div></div>
+      <div class="ps-title">Free On-Site Estimate</div>
+      <div class="ps-desc">We come to you, get on the roof, look at everything, and give you a written estimate. No charge, no obligation.</div>
+    </div>
+    <div class="ps fade-up d3">
+      <div class="ps-num-wrap"><div class="ps-num">3</div></div>
+      <div class="ps-title">We Explain What We Found</div>
+      <div class="ps-desc">We walk you through what we found &mdash; including any damaged plywood or hidden issues &mdash; before we start anything.</div>
+    </div>
+    <div class="ps fade-up d1">
+      <div class="ps-num-wrap"><div class="ps-num">4</div></div>
+      <div class="ps-title">The Crew Gets to Work</div>
+      <div class="ps-desc">Our team removes old material, repairs the deck, and installs the new roof. We keep the site clean and move efficiently.</div>
+    </div>
+    <div class="ps fade-up d2">
+      <div class="ps-num-wrap"><div class="ps-num">5</div></div>
+      <div class="ps-title">Final Walkthrough</div>
+      <div class="ps-desc">We walk the job with you when we're done. If something isn't right, we fix it before we leave.</div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="gallery-header">
+    <div>
+      <div class="eyebrow fade-up">Recent Work</div>
+      <h2 class="sec-h2 fade-up d1">Projects we've<br>completed recently.</h2>
+    </div>
+    <p class="fade-up" style="color:rgba(255,255,255,.4);font-size:14px;max-width:280px;line-height:1.65;">From small residential repairs to full commercial tear-offs &mdash; this is what we've been working on in and around Fresno.</p>
+  </div>
+  <div class="gallery-grid fade-up">
+    <div class="gi tall">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=75" alt="Commercial roof installation Fresno">
+      <div class="gi-label"><span class="gi-tag">Commercial Install</span></div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=500&q=75" alt="Roof inspection Central Valley">
+      <div class="gi-label"><span class="gi-tag">Inspection</span></div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1605152276897-4f618f831968?w=500&q=75" alt="Roof repair Fresno CA">
+      <div class="gi-label"><span class="gi-tag">Leak Repair</span></div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Shingle roof installation">
+      <div class="gi-label"><span class="gi-tag">Shingle Re-Roof</span></div>
+    </div>
+    <div class="gi">
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=500&q=75" alt="Roofing crew at work">
+      <div class="gi-label"><span class="gi-tag">Crew On Site</span></div>
+    </div>
+  </div>
+  <div class="gallery-footer">
+    <p>Photos from active jobs in Fresno and surrounding cities. Follow us on Instagram for more.</p>
+    <a href="https://www.instagram.com/p/C_ZADc3SZIL/" target="_blank" class="btn-gallery">See More on Instagram &rarr;</a>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="reviews-split">
+    <div class="reviews-score-block fade-up">
+      <div class="rsb-big">4.8</div>
+      <div class="rsb-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="rsb-count">820+ Google Reviews</div>
+      <div class="rsb-divider"></div>
+      <div class="rsb-note">Every review is from a real customer. We've never paid for a review or asked anyone to change what they wrote.</div>
+    </div>
+    <div class="reviews-right-head fade-up d1">
+      <div class="eyebrow">What People Say</div>
+      <h2 class="sec-h2">Real customers.<br><em>Honest reviews.</em></h2>
+      <p>These are pulled directly from our Google listing. The good, the detailed, and the ones where people told us exactly what made the difference for them.</p>
+    </div>
+  </div>
+  <div class="reviews-grid">
+    <div class="rev-card fade-up d1">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="rev-text">"These guys are hard working, honest, fairly priced and did a fantastic job! From the estimate to the final cleanup &mdash; no surprises. They found some damaged plywood under the old shingles and showed me the pictures before they replaced it. That's the kind of thing you remember."</p>
+      <div class="rev-name">Verified Google Customer</div>
+      <div class="rev-meta">Fresno, CA &nbsp;&middot;&nbsp; Full Re-Roof</div>
+      <div class="rev-verified">Google Verified Review</div>
+    </div>
+    <div class="rev-card fade-up d2">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="rev-text">"Delivered as promised in a timely manner. I've dealt with contractors who disappear after the estimate &mdash; that was not the case here. They showed up when they said they would, finished on schedule, and the site was clean when they left. Exactly what you want."</p>
+      <div class="rev-name">Verified Google Customer</div>
+      <div class="rev-meta">Clovis, CA &nbsp;&middot;&nbsp; Tile Repair</div>
+      <div class="rev-verified">Google Verified Review</div>
+    </div>
+    <div class="rev-card fade-up d3">
+      <div class="rev-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="rev-text">"Had a stubborn leak that two other roofers told me was fixed. It wasn't. Hi Tech came out, actually got on the roof and traced where the water was coming in between the roofing material and the siding boards. It's been dry ever since. Should've called them first."</p>
+      <div class="rev-name">Verified Google Customer</div>
+      <div class="rev-meta">Madera, CA &nbsp;&middot;&nbsp; Leak Repair</div>
+      <div class="rev-verified">Google Verified Review</div>
+    </div>
+  </div>
+</section>
+
+<section id="whyus">
+  <div class="whyus-grid">
+    <div class="whyus-left">
+      <div class="eyebrow fade-up">Why We're Different</div>
+      <h2 class="sec-h2 fade-up d1">We tell you what<br>we actually <em>found.</em></h2>
+      <div class="whyus-list">
+        <div class="wi fade-up d1">
+          <div class="wi-num">1</div>
+          <div>
+            <div class="wi-title">Honest estimates &mdash; written, not verbal</div>
+            <div class="wi-desc">Every estimate we give is written down and itemized. If we find additional damage during the job &mdash; like rotten decking &mdash; we show you photos and get your approval before touching it.</div>
+          </div>
+        </div>
+        <div class="wi fade-up d2">
+          <div class="wi-num">2</div>
+          <div>
+            <div class="wi-title">We do the work ourselves</div>
+            <div class="wi-desc">We don't subcontract to random crews. The people who show up are our people. That matters for quality control and accountability.</div>
+          </div>
+        </div>
+        <div class="wi fade-up d1">
+          <div class="wi-num">3</div>
+          <div>
+            <div class="wi-title">We're Fresno-based and Fresno-focused</div>
+            <div class="wi-desc">We live here. Our reputation matters to us. We're not a fly-by-night operation that's gone after storm season &mdash; we're at 3164 N Marks Avenue every day.</div>
+          </div>
+        </div>
+        <div class="wi fade-up d2">
+          <div class="wi-num">4</div>
+          <div>
+            <div class="wi-title">Bilingual service at no extra charge</div>
+            <div class="wi-desc">Hablamos Espa&ntilde;ol. We serve the full Central Valley community and want every customer to feel comfortable asking questions in the language they prefer.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="whyus-right">
+      <div class="wyr-title">Get a <em>free estimate</em><br>this week.</div>
+      <div class="wyr-sub">Call or text anytime during business hours. We'll come out, get on the roof, and give you a real number &mdash; no pressure, no obligation.</div>
+      <div class="wyr-contact">
+        <div class="wyr-row">
+          <div class="wyr-icon">&#9990;</div>
+          <div class="wyr-info"><strong>(559) 270-0917</strong><span>Call or text &mdash; we respond quickly</span></div>
+        </div>
+        <div class="wyr-row">
+          <div class="wyr-icon">&#128205;</div>
+          <div class="wyr-info"><strong>3164 N Marks Ave #126</strong><span>Fresno, CA 93722 &mdash; Marks Industrial Center</span></div>
+        </div>
+        <div class="wyr-row">
+          <div class="wyr-icon">&#128336;</div>
+          <div class="wyr-info"><strong>Mon &ndash; Fri, until 4 PM</strong><span>Estimates scheduled by appointment</span></div>
+        </div>
+        <div class="wyr-row">
+          <div class="wyr-icon">&#128247;</div>
+          <div class="wyr-info"><strong>See our work on Instagram</strong><span><a href="https://www.instagram.com/p/C_ZADc3SZIL/" target="_blank">@hitechroofingfresno</a></span></div>
+        </div>
+      </div>
+      <a href="tel:5592700917" class="btn-wyr">Call Now &mdash; (559) 270-0917</a>
+      <div class="wyr-spanish">Hablamos Espa&ntilde;ol &nbsp;&middot;&nbsp; Llama o manda un mensaje</div>
+    </div>
+  </div>
+</section>
+
+<section id="areas">
+  <div class="areas-wrap">
+    <div class="areas-left fade-up">
+      <div class="eyebrow">Where We Work</div>
+      <h2 class="sec-h2">Fresno and the<br><em>surrounding cities.</em></h2>
+      <p>We're based in Fresno and work throughout the Central Valley. If you're not sure whether we cover your area, just call &mdash; we'll tell you straight.</p>
+      <p>Most of our work is in Fresno County, but we regularly take on jobs in neighboring communities. For larger commercial projects, we'll travel further.</p>
+      <a href="tel:5592700917" class="btn-primary-sm fade-up d2">Check if we cover your city &rarr;</a>
+    </div>
+    <div class="areas-map fade-up d1">
+      <div class="areas-map-title">Areas We Serve</div>
+      <div class="areas-chips">
+        <div class="area-chip primary">Fresno</div>
+        <div class="area-chip primary">Clovis</div>
+        <div class="area-chip">Madera</div>
+        <div class="area-chip">Sanger</div>
+        <div class="area-chip">Selma</div>
+        <div class="area-chip">Reedley</div>
+        <div class="area-chip">Visalia</div>
+        <div class="area-chip">Tulare</div>
+        <div class="area-chip">Dinuba</div>
+        <div class="area-chip">Fowler</div>
+        <div class="area-chip">Kingsburg</div>
+        <div class="area-chip">Kerman</div>
+        <div class="area-chip">Hanford</div>
+        <div class="area-chip">Lemoore</div>
+        <div class="area-chip">+ Surrounding Areas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="faq-layout">
+    <div class="faq-left fade-up">
+      <div class="eyebrow">Questions We Get A Lot</div>
+      <h2 class="sec-h2">Before you call,<br>here are some<br><em>quick answers.</em></h2>
+      <p>These are the questions almost every customer asks before they schedule an estimate. If yours isn't here, just call &mdash; we're happy to talk it through.</p>
+      <div class="faq-left-note fade-up d2"><strong>Not sure if you need a repair or a full replacement?</strong> That's exactly what our free estimate is for. We'll get on the roof and give you an honest answer &mdash; even if it means we lose the job.</div>
+    </div>
+    <div class="faq-list fade-up d1">
+      <div class="faq-item open">
+        <button class="faq-q" onclick="toggleFaq(this)">Is the estimate really free?<div class="faq-icon">&minus;</div></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We come out, inspect the roof, and give you a written estimate at no charge. We do not require a credit card or deposit to schedule an estimate. If you decide not to move forward, there's no cost and no pressure.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does a roof replacement take?<div class="faq-icon">+</div></button>
+        <div class="faq-a"><div class="faq-a-inner">Most residential roof replacements take one to two days depending on size and complexity. Commercial projects vary. We give you a timeline before we start so you know what to expect. Weather can affect scheduling but we'll communicate with you throughout.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you handle insurance claims?<div class="faq-icon">+</div></button>
+        <div class="faq-a"><div class="faq-a-inner">We can work with your insurance company and provide documentation of damage. We've helped many homeowners navigate storm damage claims. We recommend getting your estimate from us first &mdash; we'll document everything so you have what you need for your claim.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What if you find more damage once you start?<div class="faq-icon">+</div></button>
+        <div class="faq-a"><div class="faq-a-inner">We stop and show you. We'll take photos and explain what we found and what needs to happen. We get your approval before we do any additional work. No surprises on the final bill &mdash; that's something we take seriously.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you offer any kind of warranty?<div class="faq-icon">+</div></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We stand behind our work. If something fails because of how we installed it, we come back and fix it. Most roofing materials also come with manufacturer warranties that we can walk you through. Ask us about warranty options during your estimate.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Do you speak Spanish?<div class="faq-icon">+</div></button>
+        <div class="faq-a"><div class="faq-a-inner">S&iacute;. Hablamos Espa&ntilde;ol. You're welcome to call or text in Spanish &mdash; we'll communicate with you in whatever language is most comfortable for you throughout the entire project.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="guarantee">
+  <div class="guar-panel fade-up">
+    <div class="guar-icon">&#9639;</div>
+    <div class="guar-title">We stand behind<br>every roof we install.</div>
+    <div class="guar-body">If a roof we installed or repaired fails because of our workmanship, we come back and fix it. <strong>We put that in writing.</strong> We also help you understand the manufacturer warranty on materials so you know exactly what's covered and for how long.</div>
+  </div>
+  <div class="guar-panel fade-up d2">
+    <div class="guar-icon">&#128179;</div>
+    <div class="guar-title">Payment options<br>that work for you.</div>
+    <div class="guar-body">A new roof is a real investment. We work with homeowners on payment arrangements and can discuss financing options when you come in for your estimate. <strong>We never require full payment upfront</strong> &mdash; we think that's a reasonable expectation for work that hasn't been done yet.</div>
+  </div>
+</div>
+
+<div class="cta-banner">
+  <div class="cta-left">
+    <h2>Ready to get a real<br>estimate on your roof?</h2>
+    <p>Free, written, no obligation &mdash; and we actually get on the roof to look.</p>
+  </div>
+  <a href="tel:5592700917" class="btn-cta-white">Call (559) 270-0917</a>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="footer-shield">HTR</div>
+      <div class="footer-name">Hi Tech Roofing Services Co.</div>
+      <div class="footer-tagline">Fresno, CA &nbsp;&middot;&nbsp; Central Valley Roofing</div>
+      <div class="footer-about">Local roofing company serving residential and commercial clients throughout Fresno and the Central Valley. Licensed, insured, and bilingual. Free estimates.</div>
+      <div class="footer-contact-row">&#9990; <a href="tel:5592700917">(559) 270-0917</a></div>
+      <div class="footer-contact-row">&#9679; 3164 N Marks Ave #126, Fresno CA 93722</div>
+      <div class="footer-contact-row">&#9200; Mon&ndash;Fri, until 4 PM</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <div class="footer-col-links">
+        <a href="#services">Residential Roofing</a>
+        <a href="#services">Commercial Roofing</a>
+        <a href="#services">Roof Repairs</a>
+        <a href="#services">Flat Roofing Systems</a>
+        <a href="#services">Roof Tile</a>
+        <a href="#services">Fascia &amp; Insulation</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <div class="footer-col-links">
+        <a href="#about">About Us</a>
+        <a href="#process">Our Process</a>
+        <a href="#gallery">Recent Projects</a>
+        <a href="#reviews">Customer Reviews</a>
+        <a href="#areas">Service Areas</a>
+        <a href="#faq">FAQ</a>
+      </div>
+    </div>
+    <div class="footer-cta-col">
+      <div class="footer-col-title">Free Estimate</div>
+      <p>Get on the phone with us. We'll schedule a free on-site estimate at a time that works for you &mdash; no pressure, no commitment required.</p>
+      <a href="tel:5592700917" class="btn-footer">&#9990; Call (559) 270-0917</a>
+      <p style="font-size:12px;color:rgba(255,255,255,.28);margin-top:4px;text-align:center;">Hablamos Espa&ntilde;ol</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2025 Hi Tech Roofing Services Co. All rights reserved. &nbsp;&middot;&nbsp; Fresno, CA &nbsp;&middot;&nbsp; Licensed &amp; Insured</div>
+    <div class="footer-lic">Lic. #[Insert License Number]</div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('shadow',scrollY>40));
+const obs=new IntersectionObserver((e)=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');obs.unobserve(el.target)}})},{threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-icon').textContent='+'});
+  if(!isOpen){item.classList.add('open');item.querySelector('.faq-icon').textContent='\u2212'}
+}
+</script>
+</body>
+</html>
